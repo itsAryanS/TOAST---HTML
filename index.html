@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .toast {
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 5px;
+      bottom: 30px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.26);
+      color: white;
+      display: none;
+      left: 50%;
+      padding: 10px 20px;
+      position: fixed;
+      transform: translateX(-50%);
+      width: 300px;
+      z-index: 1;
+    }
+
+    .show-toast {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="showToast()">Show Toast </button>
+  <div id="toast" class="toast">
+    Toast Message
+  </div>
+
+  <script>
+    function showToast() {
+      var x = document.getElementById("toast");
+      x.className = "toast show-toast";
+      setTimeout(function(){ x.className = x.className.replace("show-toast", ""); }, 3000);
+    }
+  </script>
+</body>
+</html>
